@@ -13,10 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.marsphotos.ui.screens
+package com.example.marsphotos.ui.theme.screens
 
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -30,17 +29,16 @@ import androidx.compose.ui.unit.dp
 import com.example.marsphotos.R
 import com.example.marsphotos.ui.theme.MarsPhotosTheme
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.PaddingValues
 
 
 @Composable
 fun HomeScreen(
-    marsUiState: String,
+    marsUiState: MarsUiState,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
@@ -89,6 +87,23 @@ fun ResultScreen(photos: String, modifier: Modifier = Modifier) {
     }
 }
 
+
+
+@Preview(showBackground = true)
+@Composable
+fun LoadingScreenPreview() {
+    MarsPhotosTheme {
+        LoadingScreen()
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ErrorScreenPreview() {
+    MarsPhotosTheme {
+        ErrorScreen()
+    }
+}
 @Preview(showBackground = true)
 @Composable
 fun ResultScreenPreview() {

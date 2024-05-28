@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.marsphotos.ui.screens
+package com.example.marsphotos.ui.theme.screens
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -50,9 +50,10 @@ class MarsViewModel : ViewModel() {
         viewModelScope.launch {
             marsUiState = try {
                 val listResult = MarsApi.retrofitService.getPhotos()
-                MarsUiState.Success(listResult)
+                MarsUiState.Success("Success: ${listResult.size} Mars photos retrieved")
             } catch (e: IOException) {
                 MarsUiState.Error
             }
         }
     }
+}
